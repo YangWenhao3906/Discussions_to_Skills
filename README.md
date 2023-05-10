@@ -8,7 +8,7 @@ Our goal is to mining skill from discussions, like the discussions in GitHub iss
 
 ## Scripts
 
-You can crawl the data using the scripts in this repo.
+You can crawl the data using the [scripts](https://github.com/YangWenhao3906/Discussions_to_Skills/blob/master/Issues_Scraper.py) in this repo.
 
 Note: Please fill in your own GitHub token. You can get it at https://github.com/settings/tokens
 
