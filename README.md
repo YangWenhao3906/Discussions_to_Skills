@@ -31,17 +31,17 @@ Note: Please fill in your own GitHub token. You can get it at https://github.com
     - Observation: Be able to observe some information keenly
 - Technical Abilities
     - Language Proficiency
-        - Java, Python…
+        - Java, Python...
     - Software Engineering
         - Design
         - Architecture
         - Refactoring
         - Sustainability
     - Domain
-        - UI, DB, DL
+        - UI, DB, DL...
     - DevOps
 - Communication Related
-    - Communication: Clear communication
+    - Communication: Clearly communicates with others
 - Problem Analysis Related
     - Analytical: Is able to analyze, apply logical reasoning to, or critically think through problems and solutions
 - Project-Specific Abilities
