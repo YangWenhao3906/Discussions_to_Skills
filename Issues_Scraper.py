@@ -3,7 +3,7 @@ import json
 import os
 
 # Create a Github object
-# TODO
+# TODO: Please fill in your own GitHub token. You can get it at https://github.com/settings/tokens
 g = Github("")
 
 # Specify the list of projects to crawl, and the minimum number of comments
