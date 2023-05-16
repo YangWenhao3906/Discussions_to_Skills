@@ -1,0 +1,175 @@
+{
+    "url": "https://github.com/pingcap/ossinsight/issues/319",
+    "repository": "pingcap/ossinsight",
+    "number": 319,
+    "number_of_comments": 5,
+    "title": "CrateDB is not typical time series database",
+    "_title_notes": "",
+    "issue_categories": ["problem reporting"],
+    "issue_skills": ["communication"],
+    "body": [
+        {
+            "sentence_categories": ["reference"],
+            "sentence_skills": ["observation","domain:db"],
+            "text": "In [DB-Engines Ranking](https://db-engines.com/), CrateDB is not in [Time Series DBMS](https://db-engines.com/en/ranking/time+series+dbms) category but in [Search Engines](https://db-engines.com/en/ranking/search+engine) with ElasticSearch etc.",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": ["problem solving"],
+            "sentence_skills": ["analytical"],
+            "text": "So I suggested remove `crate/crate` from `/backend/meta/collections/10007.time-series-database.yml`",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "\r\n",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "arielyang"
+    },
+    "created_at": "2022-06-02 02:57:15",
+    "updated_at": "2022-06-02 09:22:45",
+    "comments": [
+        {
+            "id": 1144403617,
+            "user": {
+                "login": "hooopo"
+            },
+            "comment_categories": ["problem analysis"],
+            "comment_skills": ["communication"],
+            "body": [
+                {
+                    "sentence_categories": ["communicative language"],
+                    "sentence_skills": [],
+                    "text": "@arielyang , thank you for your feedback.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": ["reference"],
+                    "sentence_skills": ["information gathering"],
+                    "text": "Cratedb is a multi-model database with time series, document, and search engine features. db-engine is also described above.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": ["problem analysis"],
+                    "sentence_skills": ["domain:db","analytical"],
+                    "text": "I am confused why it is not on the time series ranking list. I don't know how db-engine handles multi-model databases, but I think that since cratedb has the characteristics of time series databases, it is appropriate to put it in the time series database list.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-02 03:46:08",
+            "updated_at": "2022-06-02 03:46:08"
+        },
+        {
+            "id": 1144422096,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": ["problem analysis"],
+            "comment_skills": ["communication"],
+            "body": [
+                {
+                    "sentence_categories": ["reference"],
+                    "sentence_skills": ["information gathering"],
+                    "text": "Yes, I'm also confused.\r\nIt's in https://db-engines.com/en/ranking and https://db-engines.com/en/ranking/search+engine but not in https://db-engines.com/en/ranking/document+store and https://db-engines.com/en/ranking/time+series+dbms",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": ["reference"],
+                    "sentence_skills": ["information gathering"],
+                    "text": "This is profile page https://db-engines.com/en/system/CrateDB ",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": ["reference"],
+                    "sentence_skills": ["information gathering"],
+                    "text": "Name | CrateDB\r\n-- | --\r\nDescription | Distributed Date Store based on Lucene\r\nPrimary database model | Relational DBMS, Search engine\r\nSecondary database models | Document store, Time Series DBMS",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": ["problem analysis"],
+                    "sentence_skills": ["analytical","domain:db"],
+                    "text": "It's weird that CrateDB powered by Lucene but it aims time series scenario. As we all known, the performance and resources of Lucene-based products gets hit hard in timing scenarios\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-02 04:24:18",
+            "updated_at": "2022-06-02 04:24:18"
+        },
+        {
+            "id": 1144422641,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": ["problem analysis"],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": ["problem analysis"],
+                    "sentence_skills": ["analytical"],
+                    "text": "Maybe `backend/meta/collections/10016.search-engine.yml` is its right position? not sure.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-02 04:25:35",
+            "updated_at": "2022-06-02 04:25:35"
+        },
+        {
+            "id": 1144471034,
+            "user": {
+                "login": "hooopo"
+            },
+            "comment_categories": ["problem solving"],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": ["reference"],
+                    "sentence_skills": ["information gathering"],
+                    "text": "I studied the classification method of db-engine. For multi-model databases, db-engine sets a primary model for each multi-model database, and the default list is based on the primary model.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": ["problem solving"],
+                    "sentence_skills": ["domain:db","analytical","purpose"],
+                    "text": "But it can also list in a wider range, including secondary models. OSSInsight's classification is more like the latter, and it may be optimized to be compatible with the two models in the future.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "https://db-engines.com/en/ranking/time+series+dbms/all",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-02 06:03:48",
+            "updated_at": "2022-06-02 06:03:48"
+        },
+        {
+            "id": 1144477545,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": ["communicative language"],
+                    "sentence_skills": [],
+                    "text": "Very meaningful discussion",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-02 06:14:02",
+            "updated_at": "2022-06-02 06:14:02"
+        }
+    ]
+}
