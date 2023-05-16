@@ -1,0 +1,170 @@
+{
+    "url": "https://github.com/pingcap/ossinsight/issues/1265",
+    "repository": "pingcap/ossinsight",
+    "number": 1265,
+    "number_of_comments": 6,
+    "title": "Chart error when error-validate-chart",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "## Bug Report\r\nFallback to TableChart if met with Error: error-validate-chart",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "Link: https://ossinsight.io/explore/?id=99c36dae-34cb-43da-99d4-a38e0bb28b9c",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "sykp241095"
+    },
+    "created_at": "2023-02-07 06:47:51",
+    "updated_at": "2023-02-08 06:16:31",
+    "comments": [
+        {
+            "id": 1420278471,
+            "user": {
+                "login": "sykp241095"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "This may effect lots of default charts of question, so set it to P0.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-07 06:48:32",
+            "updated_at": "2023-02-07 06:48:32"
+        },
+        {
+            "id": 1420314811,
+            "user": {
+                "login": "Mini256"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "AI return an array value:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "<img width=\"718\" alt=\"image\" src=\"https://user-images.githubusercontent.com/5086433/217178926-a45aafe3-3ecd-4d4f-bf5a-1e9e4f78754e.png\">\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-07 07:31:45",
+            "updated_at": "2023-02-07 07:31:45"
+        },
+        {
+            "id": 1422043725,
+            "user": {
+                "login": "634750802"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Server will not returns error-valid-chart, this case would be handled in FE.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-08 05:37:05",
+            "updated_at": "2023-02-08 05:37:05"
+        },
+        {
+            "id": 1422054240,
+            "user": {
+                "login": "Mini256"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> this case would be handled in FE.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "How should we show data with multiple number columns? only show the first number column or display all the number columns.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "cc: @ChenlingLu ",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-08 05:54:37",
+            "updated_at": "2023-02-08 05:54:37"
+        },
+        {
+            "id": 1422067270,
+            "user": {
+                "login": "634750802"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "@Mini256 try #1274 ",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-08 06:09:17",
+            "updated_at": "2023-02-08 06:09:17"
+        },
+        {
+            "id": 1422071289,
+            "user": {
+                "login": "ChenlingLu"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "LGTM https://pingcap-ossinsight-preview-pr-1274.surge.sh/explore/?id=99c36dae-34cb-43da-99d4-a38e0bb28b9c",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-08 06:13:17",
+            "updated_at": "2023-02-08 06:13:17"
+        }
+    ]
+}

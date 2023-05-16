@@ -1,0 +1,294 @@
+{
+    "url": "https://github.com/pingcap/ossinsight/issues/483",
+    "repository": "pingcap/ossinsight",
+    "number": 483,
+    "number_of_comments": 10,
+    "title": "Star count is not synced with GitHub",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "![image](https://user-images.githubusercontent.com/212329/175851743-efad25e9-75fd-43e2-8e26-a4287c851215.png)\r\nvs\r\n![image](https://user-images.githubusercontent.com/212329/175851715-c4763fe2-b4fe-4cb8-b21e-ab2340e2b79a.png)",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "Maybe not count unstared user?",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "arielyang"
+    },
+    "created_at": "2022-06-27 03:02:36",
+    "updated_at": "2022-07-01 06:36:52",
+    "comments": [
+        {
+            "id": 1166841755,
+            "user": {
+                "login": "hooopo"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "The data source is from gharchive.org. Historical data will be lost and repeated in a small time range. For details, please check https://github.com/igrigorik/gharchive.org/issues",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-27 04:48:41",
+            "updated_at": "2022-06-27 04:48:41"
+        },
+        {
+            "id": 1166895983,
+            "user": {
+                "login": "Mini256"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Because GitHub's [Events API](https://api.github.com/events) did not provide events for unstarred activities, it only provided the `started` type event.\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-27 05:42:55",
+            "updated_at": "2022-06-27 05:42:55"
+        },
+        {
+            "id": 1169448998,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> Because GitHub's [Events API](https://api.github.com/events) did not provide events for unstarred activities, it only provided the `started` type event.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yes, it provides: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#star",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "unstarred means action = deleted",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-29 01:54:06",
+            "updated_at": "2022-06-29 01:54:06"
+        },
+        {
+            "id": 1169450042,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> The data source is from gharchive.org. Historical data will be lost and repeated in a small time range. For details, please check https://github.com/igrigorik/gharchive.org/issues",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Any specific issue?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-29 01:56:26",
+            "updated_at": "2022-06-29 01:56:26"
+        },
+        {
+            "id": 1169464009,
+            "user": {
+                "login": "sykp241095"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> > The data source is from gharchive.org. Historical data will be lost and repeated in a small time range. For details, please check https://github.com/igrigorik/gharchive.org/issues\r\n> \r\n> Any specific issue?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "The data availability depends on GitHub API, it will be lost when the API is down, everything would happend while downtime. ",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-29 02:25:55",
+            "updated_at": "2022-06-29 02:25:55"
+        },
+        {
+            "id": 1169472821,
+            "user": {
+                "login": "Mini256"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> Yes, it provides: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#star",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "@arielyang, but we can't config webhook for every repository in GitHub, right?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Using GitHub GraphQL API to obtain accurate data is a good method, but when we need to analyze the stars of all repositories, this requires a lot of GitHub API tokens (every token can only call 5,000 times every hour).",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-29 02:43:06",
+            "updated_at": "2022-06-29 02:43:06"
+        },
+        {
+            "id": 1170059973,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> > Yes, it provides: https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#star\r\n> \r\n> @arielyang, but we can't config webhook for every repository in GitHub, right?\r\n> \r\n> Using GitHub GraphQL API to obtain accurate data is a good method, but when we need to analyze the stars of all repositories, this requires a lot of GitHub API tokens (every token can only call 5,000 times every hour).",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Of course, retrieve data of each repo through API is not our solution. I just respond your GitHub API answer of \"unstarred\".",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-29 14:31:58",
+            "updated_at": "2022-06-29 14:31:58"
+        },
+        {
+            "id": 1170080180,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> > > The data source is from gharchive.org. Historical data will be lost and repeated in a small time range. For details, please check https://github.com/igrigorik/gharchive.org/issues\r\n> > \r\n> > \r\n> > Any specific issue?\r\n> \r\n> The data availability depends on GitHub API, it will be lost when the API is down, everything would happend while downtime.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yes, but I think that all the data relies on the gharchive project, star and unstarred are all affected while downtime.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "BTW, I'm not familiar with gharchive data model, not sure if there are unstarred events in the json file.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-29 14:49:56",
+            "updated_at": "2022-06-29 14:49:56"
+        },
+        {
+            "id": 1170675688,
+            "user": {
+                "login": "634750802"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "https://docs.github.com/en/enterprise-cloud@latest/developers/webhooks-and-events/events/github-event-types#watchevent ",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> The action that was performed. Currently, can only be `started`.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I think the `webhook event` and `GitHub event` are different.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-06-30 02:20:08",
+            "updated_at": "2022-06-30 02:20:08"
+        },
+        {
+            "id": 1171991073,
+            "user": {
+                "login": "arielyang"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> https://docs.github.com/en/enterprise-cloud@latest/developers/webhooks-and-events/events/github-event-types#watchevent\r\n> \r\n> > The action that was performed. Currently, can only be `started`.\r\n> \r\n> I think the `webhook event` and `GitHub event` are different.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Seems gharchive is mapped to GitHub Event. So there are no \"unstarred\" in gharchive. Got it.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-07-01 06:36:51",
+            "updated_at": "2022-07-01 06:36:51"
+        }
+    ]
+}

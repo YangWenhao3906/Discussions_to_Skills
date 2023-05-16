@@ -1,0 +1,367 @@
+{
+    "url": "https://github.com/zotero/zotero/issues/2995",
+    "repository": "zotero/zotero",
+    "number": 2995,
+    "number_of_comments": 11,
+    "title": "Make \"Add Note\" button small and move elsewhere in toolbar",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "Too many people are clicking \"Add Note\" while trying to insert a citation (and \"Note\" is confusing for some citation styles).",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "dstillman"
+    },
+    "created_at": "2023-02-14 16:08:59",
+    "updated_at": "2023-03-06 12:11:17",
+    "comments": [
+        {
+            "id": 1439993203,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Original",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "![image](https://user-images.githubusercontent.com/5899315/220628753-c395fdd8-5e3a-4477-9830-6cd1e0eb8375.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Changed",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "![image](https://user-images.githubusercontent.com/5899315/220628669-3f8bed63-bb8d-4412-9771-c7bb3f79e673.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I'm not a fan of this. Maybe if we change the order of the small icons, but even then, it's not great.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-22 13:11:33",
+            "updated_at": "2023-02-22 13:11:33"
+        },
+        {
+            "id": 1440764468,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "It needs to move, but that layout obviously won't work. Are these the only two size options for buttons? Could there be half-height Add Annotation and Add Note buttons in one column and Doc Prefs/Refresh/Unlink in another column?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-22 20:37:17",
+            "updated_at": "2023-02-22 20:37:17"
+        },
+        {
+            "id": 1441297245,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yes, these are the only one. You can look through other tabs in Word to see what options are available. I think we can have a vertical separator, but that only helps so much.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I would try to solve the issue of confusion by allowing users to switch between note and citation toolbars once they open them and make it clear that they are using the wrong one. Like if the search results are empty we could show an item that says \"Adding notes. [Switch to items](#)\" or something. And add a visible switch between the modes in the bar somewhere.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-23 07:14:15",
+            "updated_at": "2023-02-23 07:14:15"
+        },
+        {
+            "id": 1451681505,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Oh, well, MS does two small rows in a bunch of places, though:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "<img width=\"399\" alt=\"Screenshot 2023-03-02 at 5 47 58 AM\" src=\"https://user-images.githubusercontent.com/783082/222407316-1e1c29e1-c861-490e-8672-25b360b79dbf.png\">",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Weirdly spaced, but it's doable.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Occurs to me that we'll probably have Add Selected as well. So we have a bunch of options:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "1) Three small stacked rows for Add Selected, Add Annotation, and Add Note\r\n2) A vertical separator and then three big icons for Add Selected, Add Annotation, and Add Note\r\n3) Big Add/Edit Citation, Add Selected, and Add/Edit Bibliography and two weirdly spaced small stacked rows for Add Annotation and Add Note\r\n4) Big Add/Edit Citation and Add/Edit Bibliography, vertical separator, big Add Selected, two weirdly spaced small stacked rows for Add Annotation and Add Note, vertical separator\r\n5) Big Add/Edit Citation, Add Selected, and Add/Edit Bibliography, a vertical separator, and then two big icons for Add Annotation and Add Note.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "For now, until we have Add Selected and Add Annotation, I think we can just have vertical separator after Add/Edit Bibliography followed by Add Note followed by another vertical separator. Getting Add Note away from the two main buttons is the main thing.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "(Also, maybe we should rename it to Insert Note, to try to convey that it's not editable once you insert it, unlike the add/edit things.)",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-02 10:59:47",
+            "updated_at": "2023-03-02 11:01:54"
+        },
+        {
+            "id": 1451688540,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Interesting. This layout is not available on WinWord:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "![image](https://user-images.githubusercontent.com/5899315/222410736-ddb18580-25ac-406d-b782-aab343aa7188.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Moreover, the XML we use to specify the button layout is poorly documented and may not support newer layout options even if they become available.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Putting the Insert Note button between separators away from the other two buttons may be a good enough start.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-02 11:04:50",
+            "updated_at": "2023-03-02 11:04:50"
+        },
+        {
+            "id": 1451726453,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "How about this?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "1\\)\r\n![image](https://user-images.githubusercontent.com/5899315/222417495-532782ca-6162-4340-8482-402777baaedf.png)\r\n2)\r\n![image](https://user-images.githubusercontent.com/5899315/222417683-0d3ac0ee-d94e-40ef-9c6a-0af515e56ec9.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I think it belongs alone.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-02 11:35:57",
+            "updated_at": "2023-03-02 11:36:19"
+        },
+        {
+            "id": 1451733194,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I've also been reading https://interoperability.blob.core.windows.net/files/MS-CUSTOMUI/%5bMS-CUSTOMUI%5d.pdf and we can setup custom keytips for the Zotero tab and its children so that the commands can be executed via Alt-keypress. Z is taken for the tab. We could either do `ZO` or `C`",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "![image](https://user-images.githubusercontent.com/5899315/222418714-d964ce2f-0d54-4ee5-852b-39ab8a2af1ff.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Old/Updated commands:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "![image](https://user-images.githubusercontent.com/5899315/222418816-b7002534-5bda-4d1e-8876-d15b610dc043.png)\r\n![image](https://user-images.githubusercontent.com/5899315/222418864-4b9ee776-5dd8-4945-9038-bc2bf22262f1.png)\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-02 11:42:03",
+            "updated_at": "2023-03-02 11:42:03"
+        },
+        {
+            "id": 1452524713,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yeah, it belongs alone for now  we can hopefully add Add Annotation soon.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Also, if you have the original icon you used for that, you can remove the Z. I'm not sure why we have Z overlays at all for these, given that they're now all within a dedicated Zotero tab (or is there a way to add them to some quick-access toolbar where they'd be out of context?).",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "For the tab, what is Z taken by?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-02 20:50:21",
+            "updated_at": "2023-03-02 20:50:21"
+        },
+        {
+            "id": 1452525210,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Oh, I guess it's part of the two-letter ones? Then yeah, I guess ZO is the best we can do.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-02 20:50:53",
+            "updated_at": "2023-03-02 20:51:11"
+        },
+        {
+            "id": 1455863366,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> or is there a way to add them to some quick-access toolbar where they'd be out of context?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "There is.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-06 10:22:52",
+            "updated_at": "2023-03-06 10:22:52"
+        },
+        {
+            "id": 1456021774,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Done. Make sure you update WinWord template signature.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-03-06 12:11:17",
+            "updated_at": "2023-03-06 12:11:17"
+        }
+    ]
+}

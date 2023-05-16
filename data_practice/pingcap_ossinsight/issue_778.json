@@ -1,0 +1,144 @@
+{
+    "url": "https://github.com/pingcap/ossinsight/issues/778",
+    "repository": "pingcap/ossinsight",
+    "number": 778,
+    "number_of_comments": 4,
+    "title": "🚀 We are going to redesign the trending algorithm",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "The developers of OSS Insight are loyal users of GitHub Trending. When we heard that GitHub was deprecating its Trending page, we decided to optimize [OSS Insight trending](https://ossinsight.io/#trending-repos) to become a GitHub Trending alternative.  ",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "As we all know, most of the repos appearing on GitHub Trending are worthy of attention, but a few repos can also appear on the page by taking advantage of the trending algorithm. So the trending algorithm is very important. We are going to design a new algorithm that will be able to find the most popular repos, but also prevent some projects from getting onto the trending page through cheating.",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "Currently, we can provide these metrics, including GitHub interface interaction metrics like:",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "- Star\r\n- Fork",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "and code collaboration metrics like:",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "- Pull Request\r\n- Issue Open\r\n- Issue Close\r\n- Additions Code Lines\r\n- Deletions Code Lines\r\n \r\nHow should we set the weights of these metrics? Anybody got any ideas? Welcome to join us to discuss!",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "Icemap"
+    },
+    "created_at": "2022-09-02 13:02:43",
+    "updated_at": "2023-01-19 08:16:48",
+    "comments": [
+        {
+            "id": 1238153171,
+            "user": {
+                "login": "Icemap"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I have a preliminary idea. Make a time sink algorithm using the number of Stars and the number of Forks. That is, set the upper and lower score limits, the longer the operation is from the current time, the lower the score until the lower score limit. According to this algorithm, count the scores in a certain time period of all repos and rank them. Then you can get the trending repos during this period.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2022-09-06 13:28:49",
+            "updated_at": "2022-09-06 13:28:49"
+        },
+        {
+            "id": 1384799836,
+            "user": {
+                "login": "guoqiangqi"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> I have a preliminary idea. Make a time sink algorithm using the number of Stars and the number of Forks. That is, set the upper and lower score limits, the longer the operation is from the current time, the lower the score until the lower score limit. According to this algorithm, count the scores in a certain time period of all repos and rank them. Then you can get the trending repos during this period.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Hi @Icemap , im so interesting in the OSS Insight trending algorithm you noticed and used by `ossinsight.io` website, can you show some details with formula or codes here?  Really appreciate it!",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-01-17 03:54:19",
+            "updated_at": "2023-01-17 03:54:19"
+        },
+        {
+            "id": 1384932602,
+            "user": {
+                "login": "Icemap"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "@guoqiangqi Sure. I'm very glad to help you.\r\nWe just use one SQL to achieve it. It's quite simple in TiDB. Because TiDB is an HTAP database. So we can just use SQL to make the OLAP workflow.\r\nAnd this is the [SQL file](https://github.com/pingcap/ossinsight/blob/main/api/queries/trending-repos/template.sql). If you have any questions, please feel free to comment here.\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-01-17 07:16:41",
+            "updated_at": "2023-01-17 07:16:59"
+        },
+        {
+            "id": 1396595070,
+            "user": {
+                "login": "guoqiangqi"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> @guoqiangqi Sure. I'm very glad to help you. We just use one SQL to achieve it. It's quite simple in TiDB. Because TiDB is an HTAP database. So we can just use SQL to make the OLAP workflow. And this is the [SQL file](https://github.com/pingcap/ossinsight/blob/main/api/queries/trending-repos/template.sql). If you have any questions, please feel free to comment here.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "@Icemap Get it, thanks you so much.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-01-19 08:16:48",
+            "updated_at": "2023-01-19 08:16:48"
+        }
+    ]
+}

@@ -1,0 +1,661 @@
+{
+    "url": "https://github.com/zotero/zotero/issues/1429",
+    "repository": "zotero/zotero",
+    "number": 1429,
+    "number_of_comments": 11,
+    "title": "Warn if Zotero hasn't synced in a while",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "Many people think their data is stored online when it isn't and then are sad when they lose their data. Sometimes this happens because they were getting a sync error, but often it's just because they never set up syncing. We should show a warning when Zotero hasn't synced in a while, regardless of the reason.",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "Every [x] days, if you change an item, a few seconds later a non-modal dialog should pop up with options to either fix or set up syncing. There should also be a Remind Me Later button that reminds you again (in 1 day?) and a \"Don't Show Again\" checkbox\". If you choose \"Don't Show Again\" but then later set up syncing, it should probably clear that flag.",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "(Ideally the connector would also prompt you to set up syncing when you created an account or logged in while Zotero was open (as long as Zotero wasn't configured with a different user), but that's more complicated.)",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "dstillman"
+    },
+    "created_at": "2018-01-30 00:03:56",
+    "updated_at": "2022-03-02 10:27:49",
+    "comments": [
+        {
+            "id": 394251331,
+            "user": {
+                "login": "stakats"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Even the Dont show again checkbox could be Dont show again for 90 days or something. Or we clear the setting on major update. Basically we dont want people to just disable the warning and then forget all about syncing forever. ",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2018-06-04 06:49:01",
+            "updated_at": "2018-06-04 06:49:01"
+        },
+        {
+            "id": 747785249,
+            "user": {
+                "login": "fletcherhaz"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Here is a concept for a header bar:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "![Screen Shot 2020-12-17 at 2 47 58 PM](https://user-images.githubusercontent.com/4305610/102558007-bb2e4100-4089-11eb-9219-22c0946d8b69.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "We have two paths here:\r\na) Never having synced\r\nb) Sync error",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "For option (a) we have a number of questions:\r\n- Do we think the header is too aggressive?\r\n- When do we first show the header?\r\n- What is the period for `Remind me later`?\r\n- How long is `Don't show again for [x] days`? (Maybe for option a, we just say `Don't show again` with no time.)\r\n- What does the X do?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "For option (b):\r\n- I think as soon as you get an error, it shows this header (probably yellow).\r\n- When you dismiss the header, the existing sync icon then shows up.\r\n- Period for `Remind me later`?\r\n- Period for `Don't show again`?\r\n- What does the X do?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2020-12-18 00:12:26",
+            "updated_at": "2020-12-18 00:12:26"
+        },
+        {
+            "id": 748167357,
+            "user": {
+                "login": "tnajdek"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I had some thoughts on this so here is my alternative mock-up for discussion. It uses popover instead of a bar, which, I think, is a bit easier to read and also helps explain what the green arrow icon means. It also offers a call-to-action button which opens sync preferences (same as pressing the green arrow button but again itsn't immediately obvious to the new user what this button will do).",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "First run:\r\n![New Mockup 1](https://user-images.githubusercontent.com/214628/102631563-2d685980-414e-11eb-8eac-ff921cb1ac22.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "After dismissal:\r\n![New Mockup 2](https://user-images.githubusercontent.com/214628/102631577-30fbe080-414e-11eb-8aa5-7ac4b2fb3309.png)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Not sure about the blue exclamation mark icon, which might be confused with yellow exclamation mark icon, which has a different meaning. But the general idea here is that sync is not setup and the icon is there to indicate that something is incomplete.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2020-12-18 15:48:09",
+            "updated_at": "2020-12-18 15:48:09"
+        },
+        {
+            "id": 748949566,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> We have two paths here:\r\n> a) Never having synced\r\n> b) Sync error",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I'd say there are more states, at least some of which I think we want to address, though possibly in different ways:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "1) Sync never set up (no username in DB)\r\n2) Sync set up but currently unlinked (username in DB but no current sync credentials)\r\n3) Sync set up but auto-sync disabled and sync not completed in a while\r\n4) Sync set up with auto-sync enabled but all libraries disabled in the libraries-to-sync dialog (https://github.com/zotero/zotero/issues/1913 but for auto-sync)\r\n5) Sync set up with auto-sync enabled but at least one enabled library that hasn't been synced in a while due to a sync error\r\n6) Same as 5 but for file sync errors (including quota errors)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "It'll take a little work to figure out the best ways to actual identify these conditions via code. (E.g., we don't currently log sync errors in any persistent way, and we don't particularly want to, but we also don't want a restart to reset the state, so maybe we base this on the `lastSync` column in the `libraries` table and the `librariesToSync` preference. (We'd need to verify that `updateLastSyncTime()` isn't called after a sync error. It would be called before a file sync error, though, so not sure what to do about that maybe add `lastFileSync`, if we can't figure out something else?.)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I was not imagining that we'd do anything different for an individual sync error. We can consider it, particularly since part of the point of this is that the sync error icon might not always be visible enough for people to notice it. But sync errors aren't necessarily rare, permanent, or actionable  e.g., there could be a temporary server issue (which ideally would return a 5xx that triggered a silent retry but might not always) and disturbing/alarming people before the issue has a chance to resolve itself (or before they have the time to try to resolve it) might not be ideal. I was viewing the goal here more as, if you ignore a sync error icon for some number of days or weeks, we get a bit more assertive.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Re: banner vs. panel, we have a first-run guidance mechanism we could use to point a panel at the sync button, but the concern there would be that it could too easily be closed by accident, unless we can actually set it not to disappear on blur.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I don't think we'd want to change the button icon  probably more confusing (e.g., wouldn't match documentation that showed the sync button), and sort of weird to have a separate icon-based mechanism from the existing sync error icon.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2020-12-21 12:29:14",
+            "updated_at": "2020-12-21 12:29:14"
+        },
+        {
+            "id": 749037811,
+            "user": {
+                "login": "fletcherhaz"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> It'll take a little work to figure out the best ways to actual identify these conditions via code.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I'll get started on coming up with these conditions and we can continue discussing the best UI for them",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> I was not imagining that we'd do anything different for an individual sync error. ... I was viewing the goal here more as, if you ignore a sync error icon for some number of days or weeks, we get a bit more assertive.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "My apologies if this wasn't clear. I should have written a slightly longer sentence. I was broadly grouping 1-4 and 5-6 into two groups, but clearly it is more nuanced.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> Re: banner vs. panel, we have a first-run guidance mechanism we could use to point a panel at the sync button, but the concern there would be that it could too easily be closed by accident, unless we can actually set it not to disappear on blur.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "As a first time user I think the last thing I am worried about is sync and typically, at least for me, I ignore most pointers when I first open something because I have no experience/context to make decisions about what I want to enable/disable. We can pop up something on first-run with the panel, but I think after they add their first item would make more sense. Basically, a hey, you have data you can lose now, you probably want to back that up! And that points to the panel. I think we could make a panel as an absolutely positioned div that does not close on losing focus, unlike the XUL panel, although I haven't actually tried it.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> I don't think we'd want to change the button icon  probably more confusing (e.g., wouldn't match documentation that showed the sync button), and sort of weird to have a separate icon-based mechanism from the existing sync error icon.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Here we could use the icon @tnajdek suggests where the sync error icon goes instead of the sync button. We would just have two different icons for two different types of warnings. A different option would be to change the whole flow to only have one icon on the sync button that has four states: synced, syncing, warning (yellow exclamation mark), information (blue exclamation mark), and then change the documentation to match that. Furthermore, I think you could argue the current icon of static green arrow indicating either a) up to date sync and b) no syncing has been set up is not the best UX.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "To recap, I'll begin work on identifying the six states, but we need to answer whether we want a panel or popup for each one. In my view the panel is more aggressive than the popup so if we decide that half seem to be important enough to justify a panel and half are not that makes sense to me.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Finally, what is the timing for each of the six. In particular, most of the states have an action that hasn't been performed in **a while** so we need to determine what those are. Not that they do not necessarily have to be time-based i.e. after `x` number of items added we prompt to sync again.\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2020-12-21 15:39:17",
+            "updated_at": "2020-12-21 16:36:44"
+        },
+        {
+            "id": 749085752,
+            "user": {
+                "login": "fletcherhaz"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Here are some ideas for each of the six:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> 1. Sync never set up (no username in DB)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "- Non-modal panel that does not blur on focus\r\n- Appears after first item is added to library\r\n- I'm a little worried about not allowing this one to be permanently dismissed, but also worried about people ignoring it. At least people will have to click `Don't show me again` in a dialog explicitly asking them if they want to backup their data and this will be more proactive than we have been. We can always up the ante later.\r\n- I am warming to the idea of using a library size combined with time to remind people. As their library size grows, they presumably will start to be more willing to enable sync if they were not before.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> 2. Sync set up but currently unlinked (username in DB but no current sync credentials)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I don't know much about how this state can come about, but I imagine that we want to be relatively proactive on this and alert the user right away, with maybe several caveats?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> 3. Sync set up but auto-sync disabled and sync not completed in a while",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Again, if we modify how the sync icon works, then whenever a change happens that needs syncing, we could change the icon (maybe to the blue exclamation point). If they go for a whole week without clicking sync we then popup the panel informing them. I think we again need to be careful about people who consciously choose not to auto-sync and I'm wary of not allowing dismiss this reminder with no time restriction. It also can be a little confusing to have a button with icons that indicate your current state as opposed to the action the button will take.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> 4. Sync set up with auto-sync enabled but all libraries disabled in the libraries-to-sync dialog (#1913 but for auto-sync)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Could an alternative for this (and #1913) be an alert dialog after you click `Ok` in the `Choose Libraries` dialog and/or some conditionally shown colored text below that `Choose Libraries` button letting you know that you have effectively turned off sync? It seems better to try and head this one off earlier in the process. Unless it can happen another way I'm not familiar with?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> 5. Sync set up with auto-sync enabled but at least one enabled library that hasn't been synced in a while due to a sync error",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "This seems to be a bread and butter situation we, and likely the user, want to avoid. In this case a popup should probably be sufficient to grab their attention. We could change the icon after 1 day of sync error and after 3 days put up a popup.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> 6. Same as 5 but for file sync errors (including quota errors)",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Same as five for me.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2020-12-21 17:03:47",
+            "updated_at": "2020-12-21 17:03:47"
+        },
+        {
+            "id": 782429028,
+            "user": {
+                "login": "fletcherhaz"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "To start I tackled 1-3. Code is (here)[https://github.com/fletcherhaz/zotero/tree/sync-notification], but I'll wait to open a pull request unless we think the behavior described here is good.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "1-2) To encourage users to set up sync the first time, we show this panel 5 seconds after they add their first item:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "<img width=\"436\" alt=\"Screen Shot 2021-02-19 at 3 35 48 PM\" src=\"https://user-images.githubusercontent.com/4305610/108569359-01da2a80-72c9-11eb-8ea8-3e120b7c02a5.png\">",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "If they click `Remind Me Later` we will show the panel again after 30 days with the addition of a new checkbox allowing for them to dismiss the dialog forever.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "<img width=\"425\" alt=\"Screen Shot 2021-02-19 at 3 36 45 PM\" src=\"https://user-images.githubusercontent.com/4305610/108569424-19b1ae80-72c9-11eb-8225-80ef63bfdc20.png\">",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "We continue to show this warning (checking on item add/modify/delete) every 30 days until they ask us to stop. The panel does not autohide on blur so clicking one of the two buttons is required to dismiss the panel. As soon as there are sync credentials enabled, this warning will not show again. If the user unlinks their account and the sync credentials are removed from the database then disable is turned off, but the checkbox will be visible on the first display this time around. Since the time since last display will likely be more than 30 days, this will probably show immediately on the next item add/modify/delete.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "3) To remind users who have auto-sync disabled and have not synced any one of their libraries for 30 days we show this panel after they add/modify an item:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "<img width=\"419\" alt=\"Screen Shot 2021-02-19 at 3 35 30 PM\" src=\"https://user-images.githubusercontent.com/4305610/108569437-20d8bc80-72c9-11eb-8e4a-66dfbac37f7f.png\">",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Note: The weird thing about this if you were away for 30 days, then when you come back it will immediately notify you after you modify a single item. Not sure if that is a concern or not.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "To try and keep this smaller and discussion easier, I think we can tackle the first 3 points and move on to sync errors and Choose Libraries errors after.\r\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2021-02-19 22:51:29",
+            "updated_at": "2021-02-19 22:51:29"
+        },
+        {
+            "id": 782515571,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "So I think I actually like the notification bar here more. It feels like a more natural place to advertise/warn about something like this. A few problems with the panel:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "1) A panel that doesn't auto-close is kind of weird  not unheard of, but rare  and it's annoying, because part of the UI is blocked until you deal with it. Seems better to let people ignore a notification bar while they're finishing a thought and come back to it in a few minutes (rather than 30 days).",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "2) A \"Don't show this reminder again\" checkbox doesn't make sense with \"Remind Me Later\" and \"Open Sync Preferences\" buttons, so that would probably have to be a button, at which point we're sort of running out of horizontal space.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "3) The goal is really for people to set up syncing with auto-sync enabled and then never think about sync again, so associating the feature strongly with the sync button is a little misleading. Auto-sync should arguably be seen more as an integral property of Zotero. It's true that the sync error icon appears next to that icon, but we're adding a reminder about unresolved sync errors in part to address that.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Other things:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "- Instead of \"Learn More\" in the notification bar, it could just say \"Set Up Syncing\", which would take you to the prefs (which could do a better job of welcoming new users, so we don't have to set people to a webpage to explain syncing).",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "- Showing the bar after the first item makes sense to me.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "- Maybe 7 days instead of 30?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "- I think the X does the same thing as \"Remind me later\"?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Re: auto-sync disabled:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> Note: The weird thing about this if you were away for 30 days, then when you come back it will immediately notify you after you modify a single item. Not sure if that is a concern or not.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yeah, that's a little weird. Hard to think of a good solution, though. Something where, if it's been 30 days and an item is modified and we would show the error, we check to see if this was the first item in 30 days, and if so extend the time another few days? I don't know if this is worth worrying about, since if people are committed to manual sync they can just say \"Don't ask me again\".",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Also, we probably want to reset the ignoring whenever the auto-sync pref is changed (plus obviously on unlinking). So if you have auto-sync disabled and you say \"Don't ask me again\", and then enable auto-sync, and then disable it, you get prompted in 30 days.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2021-02-20 01:28:55",
+            "updated_at": "2021-02-20 01:28:55"
+        },
+        {
+            "id": 782517887,
+            "user": {
+                "login": "fletcherhaz"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> So I think I actually like the notification bar here more. It feels like a more natural place to advertise/warn about something like this. A few problems with the panel:",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I'll go ahead and switch to the panel then and post some screenshots. I'm not sure I saved it, oops!",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": ">     2. A \"Don't show this reminder again\" checkbox doesn't make sense with \"Remind Me Later\" and \"Open Sync Preferences\" buttons, so that would probably have to be a button, at which point we're sort of running out of horizontal space.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "This was weird. I ended up changing the text of the button to \"Close\" after you check the box. It felt a little janky, but better than too many buttons. I could have probably just used \"Close\" all the time, implying that it would remind you later.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": ">     * I think the X does the same thing as \"Remind me later\"?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yes. That was my understanding.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> Yeah, that's a little weird. Hard to think of a good solution, though. Something where, if it's been 30 days and an item is modified and we would show the error, we check to see if this was the first item in 30 days, and if so extend the time another few days? I don't know if this is worth worrying about, since if people are committed to manual sync they can just say \"Don't ask me again\".",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I sort of went through this thought process, felt it was getting a bit convoluted, but now that it's written down it doesn't actually seem all that hard to implement technically so I'll try it out.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> Also, we probably want to reset the ignoring whenever the auto-sync pref is changed (plus obviously on unlinking). So if you have auto-sync disabled and you say \"Don't ask me again\", and then enable auto-sync, and then disable it, you get prompted in 30 days.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Yup. Both of those have notifier listeners to turn the reminders on/off.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "As a point of clarification are we going with 7 days in between for Setup reminder and 30 days for AutoSync reminder?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2021-02-20 01:41:11",
+            "updated_at": "2021-02-20 01:41:11"
+        },
+        {
+            "id": 782555706,
+            "user": {
+                "login": "fletcherhaz"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Here are those screenshots and I switched to 7 days in between reminders for the Setup reminder, but kept it at 30 days for AutoSync.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Setup without one of the links:\r\n<img width=\"1306\" alt=\"Screen Shot 2021-02-19 at 9 06 28 PM\" src=\"https://user-images.githubusercontent.com/4305610/108583424-9a3ad400-72f6-11eb-9f05-59b3cb8c597f.png\">",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Setup with both links:\r\n<img width=\"1308\" alt=\"Screen Shot 2021-02-19 at 9 06 55 PM\" src=\"https://user-images.githubusercontent.com/4305610/108583429-9c9d2e00-72f6-11eb-97f5-7012fe65c173.png\">",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "AutoSync with both links:\r\n<img width=\"1308\" alt=\"Screen Shot 2021-02-19 at 9 07 21 PM\" src=\"https://user-images.githubusercontent.com/4305610/108583431-9e66f180-72f6-11eb-9410-086c9ac53ca2.png\">",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2021-02-20 04:10:09",
+            "updated_at": "2021-02-20 04:10:09"
+        },
+        {
+            "id": 782971229,
+            "user": {
+                "login": "dstillman"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> As a point of clarification are we going with 7 days in between for Setup reminder and 30 days for AutoSync reminder?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I guess it should just be 7 days for everything. If you turn off auto-sync while debugging something and forget to turn it back on, 30 days is a lot of data to lose.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2021-02-22 00:52:12",
+            "updated_at": "2021-02-22 00:52:12"
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "url": "https://github.com/zotero/zotero/issues/1666",
+    "repository": "zotero/zotero",
+    "number": 1666,
+    "number_of_comments": 6,
+    "title": "Better error dialog for integration errors",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "We should remove the raw citeproc-js error and include a link to the debugging steps.",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "(This presumably has to happen in the three plugin repos separately, but this can be a tracking issue.)",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "dstillman"
+    },
+    "created_at": "2019-03-18 16:20:38",
+    "updated_at": "2019-04-02 14:27:16",
+    "comments": [
+        {
+            "id": 476009250,
+            "user": {
+                "login": "fbennett"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "citeproc-js is not providing proper JS errors [for these](https://forums.zotero.org/discussion/76555/csl-error), but it should do, in this and in other contexts. Will it help to fix that, and to provide a set of documented error codes?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2019-03-24 22:49:35",
+            "updated_at": "2019-03-24 22:49:35"
+        },
+        {
+            "id": 476177854,
+            "user": {
+                "login": "fbennett"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I wonder if there is any pattern to the documents that fail in this way? If Zotero has a citation object with the bad ID, the processor could insert a placeholder at that location, collect a list of the failing IDs, and report that back in the supplementary data returned with the initial citation update list. You could then rerun the failed ID list in sequence, mix the results back into the update array, and clear the fault without user intervention. If you would like to try that, I can set up the return in the processor. If it worked, it would save throwing those errors at the user.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2019-03-25 12:37:19",
+            "updated_at": "2019-03-25 12:37:19"
+        },
+        {
+            "id": 476183440,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "This is mostly an UI/UX issue here. We don't want to see users any kind of technical info in integration error prompts with no guidance on where to go next. Most of the time the problems are resolved within the first 2-3 steps of the debugging broken documents instructions anyway. On the one hand that might not be an entirely ideal situation, since we might potentially miss some errors, but on the other one showing the raw errors, whether Zotero or citeproc caused without any guidance on where to get help/how to fix the problem is bad UX.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> I wonder if there is any pattern to the documents that fail in this way?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Haven't seen any patterned errors recently",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> If Zotero has a citation object with the bad ID, the processor could insert a placeholder at that location, collect a list of the failing IDs, and report that back in the supplementary data returned with the initial citation update list. You could then rerun the failed ID list in sequence, mix the results back into the update array, and clear the fault without user intervention. If you would like to try that, I can set up the return in the processor. If it worked, it would save throwing those errors at the user.",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I'd rather not. It is better to not put workarounds on top of broken code (or broken docs sometimes). We should make our code behave correctly in the first place (or fix broken docs).",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2019-03-25 12:53:18",
+            "updated_at": "2019-03-25 12:53:18"
+        },
+        {
+            "id": 479002347,
+            "user": {
+                "login": "fbennett"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I don't know if it will be useful for the `c[0]` issue, but the processor will assign a unique ID to a citation item submitted without a `citationID`, and citationIDs are returned as the 3rd element in the update arrays.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2019-04-02 13:44:56",
+            "updated_at": "2019-04-02 13:44:56"
+        },
+        {
+            "id": 479013204,
+            "user": {
+                "login": "adomasven"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "So I'm not entirely sure what's up here, but given it seems to be caused often by Tracked Changes text my guess is that users get their docs reviewed without restarting Zotero and Zotero retains the citeproc instance between changes made to the doc. After that happens we do not update citeproc properly with newly added citations which causes it to freak out. This is somehow related with the fact that citeproc used to keep non-existant citations in memory indefinitely and this has changed recently. Either way, I have not found a way to reproduce this yet.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2019-04-02 14:08:48",
+            "updated_at": "2019-04-02 14:08:48"
+        },
+        {
+            "id": 479022108,
+            "user": {
+                "login": "fbennett"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "I see. One option, if you decide it might be useful to go that route, might\nbe to cache a bit of citation history in the processor (similar to the\nprevious behavior, but with a cap on how far the zombie data set can grow).\nHas the feel of a workaround, so I won't move to implement it unless you\ndecide it would help, but the possibility is there.\n\nOn Tue, Apr 2, 2019 at 11:08 PM Adomas Ven <notifications@github.com> wrote:\n\n> So I'm not entirely sure what's up here, but given it seems to be caused\n> often by Tracked Changes text my guess is that users get their docs\n> reviewed without restarting Zotero and Zotero retains the citeproc instance\n> between changes made to the doc. After that happens we do not update\n> citeproc properly with newly added citations which causes it to freak out.\n> This is somehow related with the fact that citeproc used to keep\n> non-existant citations in memory indefinitely and this has changed\n> recently. Either way, I have not found a way to reproduce this yet.\n>\n> \n> You are receiving this because you commented.\n> Reply to this email directly, view it on GitHub\n> <https://github.com/zotero/zotero/issues/1666#issuecomment-479013204>, or mute\n> the thread\n> <https://github.com/notifications/unsubscribe-auth/AAEmSlLH4z8og03S9y73V3TdwcL5iyPMks5vc2RzgaJpZM4b6N6u>\n> .\n>\n",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2019-04-02 14:27:15",
+            "updated_at": "2019-04-02 14:27:15"
+        }
+    ]
+}

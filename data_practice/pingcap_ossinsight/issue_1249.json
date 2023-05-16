@@ -1,0 +1,101 @@
+{
+    "url": "https://github.com/pingcap/ossinsight/issues/1249",
+    "repository": "pingcap/ossinsight",
+    "number": 1249,
+    "number_of_comments": 3,
+    "title": "How are my private repositories visible?",
+    "_title_notes": "",
+    "issue_categories": [],
+    "issue_skills": [],
+    "body": [
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "**?!**",
+            "_notes": ""
+        },
+        {
+            "sentence_categories": [],
+            "sentence_skills": [],
+            "text": "![image](https://user-images.githubusercontent.com/38415384/216373192-7a7d6c8e-e0d5-4d9c-b2a1-ec45356079c0.png)\r\n",
+            "_notes": ""
+        }
+    ],
+    "_notes": "",
+    "user": {
+        "login": "joe733"
+    },
+    "created_at": "2023-02-02 15:50:59",
+    "updated_at": "2023-02-03 05:44:00",
+    "comments": [
+        {
+            "id": 1414000013,
+            "user": {
+                "login": "sykp241095"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "@joe733 Hi, can you point out the private one? or have you open it before and change it to private recently?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "GitHub won't allow us to get private events/activities...",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-02 16:14:32",
+            "updated_at": "2023-02-02 16:14:32"
+        },
+        {
+            "id": 1414099325,
+            "user": {
+                "login": "joe733"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "> have you open it before and change it to private recently?",
+                    "_notes": ""
+                },
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "Not recently, few months ago I guess I changed it to private. It that why it showed up in stats?",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-02 17:20:26",
+            "updated_at": "2023-02-02 17:20:26"
+        },
+        {
+            "id": 1414601504,
+            "user": {
+                "login": "sykp241095"
+            },
+            "comment_categories": [],
+            "comment_skills": [],
+            "body": [
+                {
+                    "sentence_categories": [],
+                    "sentence_skills": [],
+                    "text": "@joe733 Yes, GitHub will give all activities while the repo visibility is public, but after turning it to private, nobody can get the new events/activities of that repo.",
+                    "_notes": ""
+                }
+            ],
+            "_notes": "",
+            "created_at": "2023-02-03 01:43:50",
+            "updated_at": "2023-02-03 02:48:23"
+        }
+    ]
+}
