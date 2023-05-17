@@ -1,6 +1,6 @@
 # Intro
 
-This is a work in progress and your feedback and suggestions are welcome! 
+This is a work in progress. This coding book was written by me and has not been annotated and summarized by another one at the same time. Therefore, there are many missing issues and other problems. Any feedback and suggestions are welcome! 
 
 Many useful information can be extracted from the Issue discussions on GitHub, including but not limited to: solutions to some problems, reflection of the developers' skills from their discussions. It is reasonable to measure a developer's skills not only from his/her code contributions, but also from his/her discussions with others. 
 Undoubtedly, someone's speech reflects his/her personal skill traits.
