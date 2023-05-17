@@ -8,8 +8,8 @@ g = Github("")
 
 # Specify the list of projects to crawl, and the minimum number of comments
 project_list = [
-    {"owner": "pingcap", "repo": "ossinsight", "min_comments": 3},
-    # {"owner": "zotero", "repo": "zotero", "min_comments": 8},
+    # {"owner": "pingcap", "repo": "ossinsight", "min_comments": 3},
+    {"owner": "zotero", "repo": "zotero", "min_comments": 5},
 ]
 
 # Define the directory for storing JSON files
@@ -41,7 +41,7 @@ for project in project_list:
             sentences = body_str.split("\r\n\r\n")
             sentences_info = []
             for sentence in sentences:
-                sentence_info = {"text": sentence, "_notes": "", "skills": []}
+                sentence_info = {"sentence_categories": [], "sentence_skills": [], "text": sentence, "_notes": ""}
                 sentences_info.append(sentence_info)
                 
             # Convert datetime data to string
@@ -55,10 +55,10 @@ for project in project_list:
                 "number_of_comments": issue.comments,
                 "title": issue.title,
                 "_title_notes": "",
-                "title_skills": [],
+                "issue_categories": [],
+                "issue_skills": [],
                 "body": sentences_info,
                 "_notes": "",
-                "body_skills": [],
                 "user": {"login": issue.user.login},
                 "created_at": created_at_str,
                 "updated_at": updated_at_str,
@@ -75,7 +75,7 @@ for project in project_list:
                 comment_sentences = body_str.split("\r\n\r\n")
                 comment_sentences_info = []
                 for sentence in comment_sentences:
-                    sentence_info = {"text": sentence, "_notes": "", "skills": []}
+                    sentence_info = {"sentence_categories": [], "sentence_skills": [], "text": sentence, "_notes": ""}
                     comment_sentences_info.append(sentence_info)
                     
                 # Convert datetime data to string
@@ -85,9 +85,10 @@ for project in project_list:
                 comment_data = {
                     "id": comment.id,
                     "user": {"login": comment.user.login},
+                    "comment_categories": [],
+                    "comment_skills": [],
                     "body": comment_sentences_info,
                     "_notes": "",
-                    "comment_skills": [],
                     "created_at": created_at_str,
                     "updated_at": updated_at_str
                 }
