@@ -1,16 +1,21 @@
 This is a work in progress. This coding book was written by me and has not been annotated and summarized by another one at the same time. 
 Therefore, there are some missing issues and other problems. Any feedback and suggestions are welcome! 
 
-As an exercise for Professor Minghui Zhou in the course of Open Source Software Analysis in Peking University, China.
+> As an exercise for Professor Minghui Zhou in the course of Open Source Software Analysis in Peking University, China.
 
 # Intro
 
-Many useful information can be extracted from the Issue discussions on GitHub, including but not limited to: solutions to some problems, reflection of the developers' skills from their discussions. It is reasonable to measure a developer's skills not only from his/her code contributions, but also from his/her discussions with others. 
-Undoubtedly, someone's speech reflects his/her personal skill traits.
+Many useful information can be extracted from the Issue discussions on GitHub, including but not limited to: solutions to some problems, reflection of the developers' skills from their discussions. 
+
+It is reasonable to measure a developer's skills not only from his/her code contributions, but also from his/her discussions with others. 
+
+> Undoubtedly, someone's speech reflects his/her personal skill traits.
 
 Skills are not only limited to technical aspects. Especially in Issue discussions, communication abilities, teamwork, problem analysis and problem-solving skills, management abilities, as well as some personal traits such as patience, enthusiasm, initiative, open-mindedness, etc., can all be demonstrated.
 
-Our goal is to extract developers' skills from the discussions, that is, input "developers' words" and output "developers' skills".
+## theme analysis
+
+Our goal is to extract developers' skills from the discussions, that is, input `developers' words` and output `developers' skills`.
 
 This is not an easy task because the information is scattered and fragmented, and the content is about their questions or opinions on a particular issue. We need to infer the underlying skill information from these fragmentary expressions.
 
@@ -43,7 +48,7 @@ In `/data_practice`, there are issues that have been crawled and processed by th
 
 ## Categories of issue
 
-By reading this issue, put this issue into the following categories. Fill in `issue_categories` field, corresponding to the unit of **paragraph.**
+By reading this issue, put this issue into the following categories. **Fill in `issue_categories` field**, corresponding to the unit of **paragraph.**
 
 - **problem reporting**: Describing and documenting an issue or problem that has been encountered in order to bring it to the attention of others who can help resolve it.
 - **asking for help**: Seeking assistance or guidance from others to address an issue or solve a problem.
