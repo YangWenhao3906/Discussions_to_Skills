@@ -1,6 +1,9 @@
-# Intro
+This is a work in progress. This coding book was written by me and has not been annotated and summarized by another one at the same time. 
+Therefore, there are some missing issues and other problems. Any feedback and suggestions are welcome! 
 
-This is a work in progress. This coding book was written by me and has not been annotated and summarized by another one at the same time. Therefore, there are many missing issues and other problems. Any feedback and suggestions are welcome! 
+As an exercise for Professor Minghui Zhou in the course of Open Source Software Analysis in Peking University, China.
+
+# Intro
 
 Many useful information can be extracted from the Issue discussions on GitHub, including but not limited to: solutions to some problems, reflection of the developers' skills from their discussions. It is reasonable to measure a developer's skills not only from his/her code contributions, but also from his/her discussions with others. 
 Undoubtedly, someone's speech reflects his/her personal skill traits.
@@ -11,14 +14,14 @@ Our goal is to extract developers' skills from the discussions, that is, input "
 
 This is not an easy task because the information is scattered and fragmented, and the content is about their questions or opinions on a particular issue. We need to infer the underlying skill information from these fragmentary expressions.
 
-To discover the correspondence between "what they said" and "skills", and to reduce the cognitive burden during coding, the author conducted two rounds of coding:
+To discover **the correspondence between "what they said" and "skills"**, and to reduce **the cognitive burden during coding**, the author conducted two rounds of coding:
 
 The **first-round** coding was to **classify the contents**:
 - First, classify the contents by **issues**, including asking for help, giving advice, problem reporting, new feature reporting, etc.
 - Then classify the contents by **sentences**, including communicative language, reference, asking for help, giving help, giving advice, problem reporting, new feature reporting, new feature discussion, problem analysis, problem solving, etc.
 
 The **second-round** coding was to **annotate the skills**:
-- Infer their skills based on **sentences, paragraphs, multiple paragraphs, even the entire discussion process of the developer**, including Information Gathering Related, Technical Abilities, Communication Related, Problem Analysis Related, Personality, etc.
+- Infer their skills based on **issues** and **comments**, including Information Gathering Related, Technical Abilities, Communication Related, Problem Analysis Related, Personality, etc.
 
 # Data
 
@@ -28,7 +31,7 @@ You can crawl the data using the [scripts](https://github.com/YangWenhao3906/Dis
 
 **Note**: Please fill in your own GitHub token. You can get it at [https://github.com/settings/tokens](https://github.com/settings/tokens)
 
-This script crawls all closed issues with a discussion number greater than n (set by the user), saves them in JSON format, and uses `\r\n\r\n` to split each message body
+This script crawls all closed issues with a discussion number greater than n (set by the user), saves them in JSON format.
 
 ## Data you can use to practice
 
@@ -36,7 +39,7 @@ In `/data_practice`, there are issues that have been crawled and processed by th
 
 # Round One of Coding
 
-`example_issue.JSON` is an example by the author. 
+`example_issue.json` is an example by the author. 
 
 ## Categories of issue
 
@@ -48,7 +51,9 @@ By reading this issue, put this issue into the following categories. Fill in `is
 
 ## Elements of issue discussion
 
-Read each sentence and put it into one of the following categories. Fill in `sentence_categories` and  `comment_categories` field, corresponding to the unit of **sentence** and **paragraph** respectively.
+Read each sentence and put it into one of the following categories. **Fill in `comment_categories` field**.
+
+And we provide **`sentence_categories` field** if you think the unit of sentence is more appropriate.
 
 - **communicative language**: Greetings, thanks, apologies, etc
 - **reference**: All information is obtained not only from others, but also from oneself, such as when a problem is found in usage.
@@ -63,7 +68,9 @@ Read each sentence and put it into one of the following categories. Fill in `sen
 
 # Round Two of Coding
 
-Read each sentence. Make the following inference: what skills do I need to possess to say these things? Fill in `sentence_skills`, `issue_skills`, `comment_skills` fields, corresponding to the unit of **sentence** and **paragraph** respectively.
+Read each paragraph. Make the following inference: what skills do I need to possess to say these things? **Fill in `issue_skills`, `comment_skills` fields**.
+
+And we provide **`sentence_skills` field** if you think the unit of sentence is more appropriate.
 
 ## Skills
 
